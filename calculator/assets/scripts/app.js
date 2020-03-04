@@ -11,19 +11,28 @@ function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   outputResult(currentResult, calcDescription);
 }
 
+function writeToLog(
+  operationIdentifier,
+  prevResult,
+  operationNumber,
+  newResult
+) {
+  const logEntry = {
+    operation: operationIdentifier,
+    prevResult: prevResult,
+    number: operationNumber,
+    result: newResult
+  };
+  logEntries.push(logEntry);
+}
+
 //toString, ParseInt,ParseFloat
 function add() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult += enteredNumber;
   createAndWriteOutput("+", initialResult, enteredNumber);
-  const logEntry = {
-    operation: "ADD",
-    prevResult: initialResult,
-    number: enteredNumber,
-    result: currentResult
-  };
-  logEntries.push(logEntry);
+  writeToLog("ADD", initialResult, enteredNumber, currentResult);
 }
 
 function substract() {
@@ -31,13 +40,7 @@ function substract() {
   const initialResult = currentResult;
   currentResult -= enteredNumber;
   createAndWriteOutput("-", initialResult, enteredNumber);
-  const logEntry = {
-    operation: "SUBTRACT",
-    prevResult: initialResult,
-    number: enteredNumber,
-    result: currentResult
-  };
-  logEntries.push(logEntry);
+  writeToLog("SUBSTRACT", initialResult, enteredNumber, currentResul);
 }
 
 function multiply() {
@@ -45,13 +48,7 @@ function multiply() {
   const initialResult = currentResult;
   currentResult *= enteredNumber;
   createAndWriteOutput("*", initialResult, enteredNumber);
-  const logEntry = {
-    operation: "MULTIPLY",
-    prevResult: initialResult,
-    number: enteredNumber,
-    result: currentResult
-  };
-  logEntries.push(logEntry);
+  writeToLog("MULTIPLY", initialResult, enteredNumber, currentResul);
 }
 
 function divide() {
@@ -59,22 +56,10 @@ function divide() {
   const initialResult = currentResult;
   currentResult /= enteredNumber;
   createAndWriteOutput("/", initialResult, enteredNumber);
-  const logEntry = {
-    operation: "DIVIDE",
-    prevResult: initialResult,
-    number: enteredNumber,
-    result: currentResult
-  };
-  logEntries.push(logEntry);
+  writeToLog("DIVIDE", initialResult, enteredNumber, currentResul);
 }
 
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", substract);
 multiplyBtn.addEventListener("click", multiply);
 divideBtn.addEventListener("click", divide);
-
-// const userInput = document.getElementById("input-number");
-// const addBtn = document.getElementById("btn-add");
-// const subtractBtn = document.getElementById("btn-subtract");
-// const multiplyBtn = document.getElementById("btn-multiply");
-// const divideBtn = document.getElementById("btn-divide");
