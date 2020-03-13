@@ -1,7 +1,7 @@
-# academind-javascript
+## 몬스터 죽이기 게임 (Javascript)
 
-udemy-javascript-course
+![monster-attack-game](./captures/monsterAttack.gif)
 
-![monster-attack-game](./captures/monster-attack.gif)
+## 간단한 자바스크립트 계산기 (Javascript)
 
-![adf](./captures/monster-attack.gif)
+![calculator](./captures/simpleCalculator.gif)
