@@ -64,6 +64,17 @@ function divide() {
   calculateResult("DIVIDE");
 }
 
+function calculate(operation) {
+  if(operation==='ADD'){
+        currentResult += enteredNumber;
+    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+  writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+  }
+  
+  }
+
+}
+
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", substract);
 multiplyBtn.addEventListener("click", multiply);
